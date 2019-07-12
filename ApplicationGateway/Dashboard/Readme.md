@@ -7,7 +7,7 @@ More info in blog: <https://blogs.technet.microsoft.com/robdavies/2017/12/29/mon
 ## Deploy Dashboard via Portal
 Click the button!
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fiamrobdavies%2FMonitoringExamples%2Fmaster%2FApplicationGateway%2FDashboard%2FAppGWDashboard.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fprtdomingo%2FMonitoringExamples%2Fmaster%2FApplicationGateway%2FDashboard%2FAppGWDashboard.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
