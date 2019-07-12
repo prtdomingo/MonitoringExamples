@@ -58,7 +58,7 @@
                           },
                           {
                             "name": "Query",
-                            "value": "AzureDiagnostics\r\n| where ResourceProvider == \"MICROSOFT.NETWORK\" and Category == \"ApplicationGatewayPerformanceLog\"\r\n| summarize avg(throughput_d) by Resource, bin(TimeGenerated, 1m)\r\n| extend ThroughputMb = (avg_throughput_d/1000)/1000\r\n| project Resource, TimeGenerated, ThroughputMb\r\n| render timechart\r\n"
+                            "value": "AzureDiagnostics\r\n| where ResourceProvider == \"MICROSOFT.NETWORK\" and Category == \"ApplicationGatewayPerformanceLog\"\r\n| summarize avg(toint(throughput_s)) by Resource, bin(TimeGenerated, 1m)\r\n| extend ThroughputMb = (avg_throughput_s/1000)/1000\r\n| project Resource, TimeGenerated, ThroughputMb\r\n| render timechart\r\n"
                           },
                           {
                             "name": "TimeRange",
@@ -143,7 +143,7 @@
                           },
                           {
                             "name": "Query",
-                            "value": "AzureDiagnostics\r\n| where ResourceProvider == \"MICROSOFT.NETWORK\" and Category == \"ApplicationGatewayPerformanceLog\"\r\n| summarize max(unHealthyHostCount_d) by Resource, bin(TimeGenerated, 1m)\r\n| render timechart\r\n"
+                            "value": "AzureDiagnostics\r\n| where ResourceProvider == \"MICROSOFT.NETWORK\" and Category == \"ApplicationGatewayPerformanceLog\"\r\n| summarize max(toint(unhealthyHostCount_s)) by Resource, bin(TimeGenerated, 1m)\r\n| render timechart\r\n"
                           },
                           {
                             "name": "TimeRange",
@@ -158,7 +158,7 @@
                               },
                               "yAxis": [
                                 {
-                                  "name": "max_unHealthyHostCount_d",
+                                  "name": "max_unHealthyHostCount_s",
                                   "type": "Double"
                                 }
                               ],
@@ -228,7 +228,7 @@
                           },
                           {
                             "name": "Query",
-                            "value": "AzureDiagnostics\r\n| where ResourceProvider == \"MICROSOFT.NETWORK\" and Category == \"ApplicationGatewayPerformanceLog\"\r\n| summarize max(healthyHostCount_d) by Resource, bin(TimeGenerated, 1m)\r\n| render timechart\r\n"
+                            "value": "AzureDiagnostics\r\n| where ResourceProvider == \"MICROSOFT.NETWORK\" and Category == \"ApplicationGatewayPerformanceLog\"\r\n| summarize max(toint(healthyHostCount_s)) by Resource, bin(TimeGenerated, 1m)\r\n| render timechart\r\n"
                           },
                           {
                             "name": "TimeRange",
@@ -243,7 +243,7 @@
                               },
                               "yAxis": [
                                 {
-                                  "name": "max_healthyHostCount_d",
+                                  "name": "max_healthyHostCount_s",
                                   "type": "Double"
                                 }
                               ],
@@ -398,7 +398,7 @@
                           },
                           {
                             "name": "Query",
-                            "value": "AzureDiagnostics\r\n| where ResourceProvider == \"MICROSOFT.NETWORK\" and Category == \"ApplicationGatewayPerformanceLog\"\r\n| summarize avg(latency_d) by Resource, bin(TimeGenerated, 1m)\r\n| render timechart\n"
+                            "value": "AzureDiagnostics\r\n| where ResourceProvider == \"MICROSOFT.NETWORK\" and Category == \"ApplicationGatewayPerformanceLog\"\r\n| summarize avg(toint(latency_s)) by Resource, bin(TimeGenerated, 1m)\r\n| render timechart\n"
                           },
                           {
                             "name": "TimeRange",
@@ -413,7 +413,7 @@
                               },
                               "yAxis": [
                                 {
-                                  "name": "avg_latency_d",
+                                  "name": "avg_latency_s",
                                   "type": "Double"
                                 }
                               ],
@@ -610,7 +610,7 @@
                           },
                           {
                             "name": "PartTitle",
-                            "value": "MyService API Requests per Min"
+                            "value": "TradeNet API Requests per Min"
                           },
                           {
                             "name": "PartSubTitle",
@@ -624,7 +624,7 @@
                         "type": "Extension/AppInsightsExtension/PartType/AnalyticsLineChartPart",
                         "settings": {
                           "content": {
-                            "dashboardPartTitle": "MyService API Requests per Min",
+                            "dashboardPartTitle": "TradeNet API Requests per Min",
                             "dashboardPartSubTitle": "Application Gateway"
                           }
                         },
@@ -716,7 +716,7 @@
                           },
                           {
                             "name": "Query",
-                            "value": "AzureDiagnostics\r\n| where ResourceProvider == \"MICROSOFT.NETWORK\" and Category == \"ApplicationGatewayPerformanceLog\"\r\n| summarize avg(requestCount_d) by Resource, bin(TimeGenerated, 1m)\r\n| render timechart\n"
+                            "value": "AzureDiagnostics\r\n| where ResourceProvider == \"MICROSOFT.NETWORK\" and Category == \"ApplicationGatewayPerformanceLog\"\r\n| summarize avg(toint(requestCount_s)) by Resource, bin(TimeGenerated, 1m)\r\n| render timechart\n"
                           },
                           {
                             "name": "TimeRange",
@@ -801,7 +801,7 @@
                           },
                           {
                             "name": "Query",
-                            "value": "AzureDiagnostics\r\n| where ResourceProvider == \"MICROSOFT.NETWORK\" and Category == \"ApplicationGatewayPerformanceLog\"\r\n| summarize avg(failedRequestCount_d) by Resource, bin(TimeGenerated, 1m)\r\n| render timechart\n"
+                            "value": "AzureDiagnostics\r\n| where ResourceProvider == \"MICROSOFT.NETWORK\" and Category == \"ApplicationGatewayPerformanceLog\"\r\n| summarize avg(toint(failedRequestCount_s)) by Resource, bin(TimeGenerated, 1m)\r\n| render timechart\n"
                           },
                           {
                             "name": "TimeRange",
